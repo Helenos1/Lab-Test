@@ -63,6 +63,14 @@ class Polly
      
    }
    
+      else
+      {
+     
+       bodyX = bodyX;
+       bodyY = bodyY;
+     
+      }
+   
    if(bodyY == height * 0.8)
    {
      
@@ -70,8 +78,6 @@ class Polly
      bodyY ++;
      
    }
-   
-   //else
   
   }
 

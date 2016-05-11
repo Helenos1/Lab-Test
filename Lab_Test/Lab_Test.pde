@@ -7,6 +7,11 @@ boolean space = false;  // plane
 
 ArrayList < Cloud > clouds = new ArrayList < Cloud > ();
 
+  import ddf.minim.*;
+
+  AudioSnippet music; //  paddle ball
+  Minim minim; //  paddle ball
+
 void setup()
 {
   
@@ -16,6 +21,9 @@ void setup()
  myAeroplane = new Aeroplane();
  myBG = new BG();
  myPolly = new Polly();
+ 
+  minim = new Minim(this);
+  music = minim.loadSnippet("Music.mp3");  //  activate sound
   
 }
 
@@ -61,12 +69,14 @@ void draw()
  myPolly.update();
  myPolly.render();
  
-   for(int i = 0 ; i < clouds.size() ; i ++)
+   for(int i = 0 ; i < clouds.size() ; i ++)  // for multiple clouds
   {
     
     clouds.get(i).update();
     clouds.get(i).render();
     
   }
+  
+  music.play();
   
 }

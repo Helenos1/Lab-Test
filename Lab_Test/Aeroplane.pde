@@ -82,19 +82,23 @@ class Aeroplane
     {
       
      boxY = height * 0.8;
-     bSpeed = 0;
       
     }
+    
+    
 
   }
   
   void render()
   {
     
+    
     // present
     fill(255, 10, 10);
     stroke(255, 10, 10);
     rect(x1 + 40, boxY, boxW, boxH);  // present
+    
+    
     
     //plane
     stroke(180);
@@ -104,8 +108,10 @@ class Aeroplane
     rect(x1 + 60, wingY, w, h);
     triangle(x1, y2, x1 + 20, y2, x1, y2 - 20);  // left point, right point, top point
     
+    
+    
     //windows
-    for(float x1 = 60; x1 <= 180; x1 += 30);  // can't get it to work..
+    for(int x1 = 60; x1 <= 180; x1 += 30);  // can't get it to work..
     {
       
       fill(255, 255, 40);
