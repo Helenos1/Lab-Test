@@ -16,7 +16,7 @@ class Aeroplane
   float wingY;
   float w;
   float h;
-  //float x;
+  float x;
   
   float aSpeed;
   
@@ -51,7 +51,7 @@ class Aeroplane
     
     aSpeed = random(1,5);
     
-   //x = 70;
+   x = 70;
     
     //windowX = 60;
     
@@ -64,7 +64,7 @@ class Aeroplane
     x1 = x1 + aSpeed; // movement
     
     if( (x1 + 40) > (width + x3)) // if the plane leaves the screen, restart it
-    { //
+    { 
       
       x1 = 0 - x3;
       aSpeed = random(1,5);
@@ -91,23 +91,33 @@ class Aeroplane
   void render()
   {
     
+    // present
+    fill(255, 10, 10);
+    stroke(255, 10, 10);
+    rect(x1 + 40, boxY, boxW, boxH);  // present
+    
+    //plane
     stroke(180);
     fill(180);
     quad(x1, y1, x1, y2, x1 + 120, y3, x1 + 140, y4);
     rectMode(CENTER);
     rect(x1 + 60, wingY, w, h);
     triangle(x1, y2, x1 + 20, y2, x1, y2 - 20);  // left point, right point, top point
-    fill(255, 10, 10);
-    stroke(255, 10, 10);
-    rect(x1 + 40, boxY, boxW, boxH);
     
-    /*for(float x = 60; x <= 180; x += 30);
+    //windows
+    for(float x1 = 60; x1 <= 180; x1 += 30);  // can't get it to work..
     {
       
-      fill(255, 255, 0);
-      rect(x, y2 + 15, 20, 28);
+      fill(255, 255, 40);
+      stroke(255, 255, 40);
       
-    }*/  
+      // since the for loop didn't work I had to draw each window
+      rect(x1 + 20, y2 + 15, 16, 22);
+      rect(x1 + 48, y2 + 15, 16, 22);
+      rect(x1 + 77, y2 + 15, 16, 22);
+      rect(x1 + 105, y2 + 15, 16, 22);
+      
+    }
     
     
 

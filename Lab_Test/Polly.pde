@@ -20,6 +20,8 @@ class Polly
   float legRW;
   float legRH;
   
+  float speed;
+  
  
    Polly()
    {
@@ -43,12 +45,33 @@ class Polly
   
     legRW = 2;
     legRH = 35;
+    
+    speed = 2;
+    
    }
 
   void update()
   {
+    
+
   
+   if(myAeroplane.boxY == height * 0.8)
+   {
+     
+    bodyX ++;
+    bodyY --;
+     
+   }
    
+   if(bodyY == height * 0.8)
+   {
+     
+     bodyX --;
+     bodyY ++;
+     
+   }
+   
+   //else
   
   }
 
