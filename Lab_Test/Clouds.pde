@@ -13,6 +13,10 @@ class Cloud
 
   float radiusWR;
   float radiusHR;
+  
+  float x2;
+  float y2;
+  float cloud2Speed;
 
   Cloud() // constructor
   {
@@ -30,6 +34,12 @@ class Cloud
     
     cloudSpeed = random(1, 5);
     
+    
+    x2 = width + 150;
+    y2 = height * 0.18;
+    cloud2Speed = random(1, 5);
+    
+    
   }
   
   void update()
@@ -45,6 +55,16 @@ class Cloud
       
     }
     
+   x2 = x2 - cloud2Speed;
+   
+    if( (x2 + 40) < (0 - radiusWR / 2))
+    {
+      
+      x2 = width + radiusWL;
+      cloud2Speed = random(1,5);
+      
+    }
+    
   }
   
   void render()
@@ -55,6 +75,10 @@ class Cloud
     ellipse(x, y, radiusW, radiusH); //middle cloud
     ellipse(x - 40, y, radiusWL, radiusHL); // left cloud
     ellipse(x + 40, y, radiusWR, radiusHR); // right cloud
+    
+    ellipse(x2, y2, radiusW, radiusH); //middle cloud
+    ellipse(x2 - 40, y2, radiusWL, radiusHL); // left cloud
+    ellipse(x2 + 40, y2, radiusWR, radiusHR); // right cloud
     
   }
   

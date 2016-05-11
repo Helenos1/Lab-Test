@@ -4,7 +4,7 @@ BG myBG;
 
 boolean space = false;  // plane 
 
-  
+ArrayList < Cloud > clouds = new ArrayList < Cloud > ();
 
 void setup()
 {
@@ -21,7 +21,7 @@ void setup()
 void keyPressed()
 {
  
-  if (keyCode == ' ')
+  if (key == ' ')
   {
     
     space = true;
@@ -33,7 +33,7 @@ void keyPressed()
 void keyReleased()
 {
   
-  if (keyCode == ' ')
+  if (key == ' ')
   {
     
     space = false;
@@ -55,5 +55,13 @@ void draw()
  
  myAeroplane.update();
  myAeroplane.render();
+ 
+   for(int i = 0 ; i < clouds.size() ; i ++)
+  {
+    
+    clouds.get(i).update();
+    clouds.get(i).render();
+    
+  }
   
 }

@@ -71,7 +71,7 @@ class Aeroplane
       
     }
     
-    if(space = true)
+    if(space == true)
     {
       
       boxY += 6;
