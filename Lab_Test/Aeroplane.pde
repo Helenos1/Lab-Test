@@ -22,9 +22,13 @@ class Aeroplane
   
   //float windowX;
   
+  float boxY;
+  float boxW, boxH;
+  float bSpeed;
+  
   Aeroplane()
   {
-    
+    // main body fields
     x1 = 50;
     y1 = 90;
     x2 = x1;     
@@ -34,10 +38,16 @@ class Aeroplane
     x4 = x1 + 140;
     y4 = 90;
     
+    // wing fields
     wingX = x1 + 60;
     wingY = y2 + 15;
     w = 25;
     h = 90;
+    
+    boxY = 75;
+    boxW = 20;
+    boxH = 20;
+    bSpeed = 5;
     
     aSpeed = random(1,5);
     
@@ -51,13 +61,28 @@ class Aeroplane
   void update()
   {
     
-    x1 = x1 + aSpeed;
+    x1 = x1 + aSpeed; // movement
     
-    if( (x1 + 40) > (width + x3))
-    {
+    if( (x1 + 40) > (width + x3)) // if the plane leaves the screen, restart it
+    { //
       
       x1 = 0 - x3;
       aSpeed = random(1,5);
+      
+    }
+    
+    if(space = true)
+    {
+      
+      boxY += 6;
+      
+    }
+    
+    if(boxY >= height * 0.8)
+    {
+      
+     boxY = 0;
+     bSpeed = 0;
       
     }
 
@@ -72,14 +97,17 @@ class Aeroplane
     rectMode(CENTER);
     rect(x1 + 60, wingY, w, h);
     triangle(x1, y2, x1 + 20, y2, x1, y2 - 20);  // left point, right point, top point
+    fill(255, 10, 10);
+    stroke(255, 10, 10);
+    rect(x1 + 40, boxY, boxW, boxH);
     
-       /*for(float x = 60; x <= 180; x += 30);
+    /*for(float x = 60; x <= 180; x += 30);
     {
       
       fill(255, 255, 0);
       rect(x, y2 + 15, 20, 28);
       
-    }*/
+    }*/  
     
     
 
