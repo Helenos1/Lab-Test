@@ -19,7 +19,7 @@ class Cloud
     
     radiusW = 100;
     radiusH = 60;
-    x = width / 2;
+    x = width + 120;
     y = height * 0.1;
     
     radiusWL = 80;
