@@ -81,7 +81,7 @@ class Aeroplane
     if(boxY >= height * 0.8)
     {
       
-     boxY = 0;
+     boxY = height * 0.8;
      bSpeed = 0;
       
     }

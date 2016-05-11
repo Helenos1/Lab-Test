@@ -1,6 +1,7 @@
 Cloud myCloud;
 Aeroplane myAeroplane;
 BG myBG;
+Polly myPolly;
 
 boolean space = false;  // plane 
 
@@ -14,6 +15,7 @@ void setup()
  myCloud = new Cloud();
  myAeroplane = new Aeroplane();
  myBG = new BG();
+ myPolly = new Polly();
   
 }
 
@@ -55,6 +57,9 @@ void draw()
  
  myAeroplane.update();
  myAeroplane.render();
+ 
+ myPolly.update();
+ myPolly.render();
  
    for(int i = 0 ; i < clouds.size() ; i ++)
   {
